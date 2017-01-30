@@ -3,6 +3,7 @@ Flask, Peewee test project
 
 # Usage:
 git clone https://github.com/peterburlakov/flaskpeewee.git
+
 docker-compose up
 
 # Test:
