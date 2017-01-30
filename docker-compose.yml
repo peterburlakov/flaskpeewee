@@ -1,0 +1,18 @@
+# This configuration does not include a processing node
+# Which makes for faster setup times
+version: '2'
+services:
+  redis:
+    image: redis:3-alpine
+    ports:
+      - "6379:6379"
+
+  webfp:
+    build: ./src
+    container_name: webfp
+    entrypoint: gunicorn -w 4 -b 0.0.0.0:5000 main:app
+    ports:
+      - "5000:5000"
+    depends_on:
+      - redis
+    restart: on-failure:10

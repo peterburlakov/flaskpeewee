@@ -1,0 +1,5 @@
+flask
+Flask-Cache
+flask-peewee
+gunicorn
+redis
